@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="first">
+            <div>
+                <img src="pic1.png" alt="Verification Image" class="image">
+            </div>
+
+            <h2>OTP Verification</h2>
+            <p class="subtitle">Enter email and phone number to send a one-time password</p>
+
+            <label>Email</label>
+            <div class="input-box">
+                <input type="email" value="user@marmeto.com" disabled class="input">
+            </div>
+
+            <label>Phone Number</label>
+            <input type="text" id="phoneNumber" placeholder="+44 9999999999" class="input">
+            <span id="phoneError" class="error"></span>
+
+            <button class="btn" onclick="showOTP()">Continue</button>
+        </div>
+
+     
+        <div id="second" style="display: none;">
+            <button class="back-btn" onclick="goBackToStep1()">←</button>
+            <h2>Verification Code</h2>
+            <p class="subtitle">We have sent the verification code to your email address</p>
+            <div class="otp-container">
+                <input type="text" maxlength="1" class="otp-input">
+                <input type="text" maxlength="1" class="otp-input">
+                <input type="text" maxlength="1" class="otp-input">
+                <input type="text" maxlength="1" class="otp-input">
+            </div>
+            <button class="btn" onclick="showSuccess()">Confirm</button>
+        </div>
+
+       
+        <div id="third" style="display: none; text-align: center;">
+            <button class="back-btn" onclick="goBackToStep2()">←</button>
+            <img src="pic2.png" alt="Success Icon" class="success-icon">
+            <h2>Hey <span id="userName">{USER}</span>!</h2>
+            <p class="subtitle">Congratulations! You have been successfully authenticated</p>
+            <button class="btn">Done</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
